@@ -6,7 +6,7 @@
 namespace matryx {
     class Canvas {
         public:
-            constexpr int BITS_PER_PIXEL = 4;
+            static constexpr int BITS_PER_PIXEL = 4;
 
             Canvas(const int width, const int height);
             void setPixel(int x, int y, float r, float g, float b);

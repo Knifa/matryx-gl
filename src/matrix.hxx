@@ -1,5 +1,5 @@
-#ifndef MATRIX_H
-#define MATRIX_H
+#ifndef MATRYX_MATRIX_H
+#define MATRYX_MATRIX_H
 
 #include <array>
 #include <cstdint>
