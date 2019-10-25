@@ -28,7 +28,7 @@ void Matrix::sendFrame(const uint8_t *frame) {
 }
 
 std::size_t Matrix::getFrameSize() {
-    return this->width * this->height * 4;
+    return this->width * this->height * Matrix::BITS_PER_PIXEL;
 }
 
 int Matrix::getWidth() {

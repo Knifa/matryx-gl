@@ -11,6 +11,8 @@
 namespace matryx {
     class Matrix {
         public:
+            static constexpr int BITS_PER_PIXEL = 3;
+
             Matrix(const std::string zmqEndpoint, const int width, const int height);
             void connect();
             void sendFrame(const uint8_t *frame);

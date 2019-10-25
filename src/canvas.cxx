@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <cstdint>
 
+#include "matrix.hxx"
 #include "canvas.hxx"
 
 using namespace matryx;
@@ -10,7 +11,7 @@ using std::min;
 Canvas::Canvas(const int width, const int height) {
   this->width = width;
   this->height = height;
-  this->frame = new uint8_t[width * height * Canvas::BITS_PER_PIXEL];
+  this->frame = new uint8_t[width * height * Matrix::BITS_PER_PIXEL];
 }
 
 void Canvas::setPixel(const int x, const int y, const float r, const float g,
@@ -20,7 +21,7 @@ void Canvas::setPixel(const int x, const int y, const float r, const float g,
   const uint8_t bByte = static_cast<uint8_t>(max(0.0f, min(1.0f, b)) * 255.0f);
 
   const std::size_t offset =
-      x * Canvas::BITS_PER_PIXEL + y * this->width * BITS_PER_PIXEL;
+      x * Matrix::BITS_PER_PIXEL + y * this->width * Matrix::BITS_PER_PIXEL;
   this->frame[offset + 0] = rByte;
   this->frame[offset + 1] = gByte;
   this->frame[offset + 2] = bByte;
