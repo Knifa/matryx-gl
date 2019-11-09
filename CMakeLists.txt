@@ -8,9 +8,12 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 
 add_executable(matryx-gl
+  src/Canvas.cxx
+  src/FrameTimer.cxx
   src/main.cxx
   src/Matrix.cxx
-  src/Canvas.cxx
+  src/Scene.cxx
+  src/scenes/WatermelonPlasmaScene.cxx
 )
 
 set_target_properties(matryx-gl
