@@ -1,8 +1,8 @@
-#ifndef MATRYX_SCENES_WATERMELONPLASMASCENE_HXX
-#define MATRYX_SCENES_WATERMELONPLASMASCENE_HXX
+#ifndef MATRYX_SCENES_WATERMELONPLASMASCENEHPP
+#define MATRYX_SCENES_WATERMELONPLASMASCENEHPP
 
-#include "../FrameTimer.hxx"
-#include "../Scene.hxx"
+#include "../FrameTimer.hpp"
+#include "../Scene.hpp"
 
 namespace matryx::scenes {
 class WatermelonPlasmaScene : public Scene {

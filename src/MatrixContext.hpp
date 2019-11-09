@@ -1,8 +1,8 @@
 #ifndef MATRYX_MATRIXCONTEXT_H
 #define MATRYX_MATRIXCONTEXT_H
 
-#include "Canvas.hxx"
-#include "Matrix.hxx"
+#include "Canvas.hpp"
+#include "Matrix.hpp"
 #include <memory>
 
 namespace matryx {

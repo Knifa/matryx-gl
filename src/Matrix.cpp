@@ -5,7 +5,7 @@
 
 #include <zmq.hpp>
 
-#include "Matrix.hxx"
+#include "Matrix.hpp"
 
 using matryx::Matrix;
 

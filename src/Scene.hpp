@@ -1,10 +1,10 @@
-#ifndef MATRYX_SCENE_H
-#define MATRYX_SCENE_H
+#ifndef MATRYX_SCENE_HPP
+#define MATRYX_SCENE_HPP
 
 #include <memory>
 
-#include "FrameTimer.hxx"
-#include "MatrixContext.hxx"
+#include "FrameTimer.hpp"
+#include "MatrixContext.hpp"
 
 namespace matryx {
 class Scene {

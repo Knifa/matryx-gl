@@ -1,17 +1,17 @@
 #include <chrono>
 #include <iostream>
 #include <memory>
+#include <ratio>
 #include <thread>
 
-#include "Canvas.hxx"
-#include "Matrix.hxx"
-#include "MatrixContext.hxx"
-#include "FrameTimer.hxx"
-#include "scenes/WatermelonPlasmaScene.hxx"
+#include "Canvas.hpp"
+#include "FrameTimer.hpp"
+#include "Matrix.hpp"
+#include "MatrixContext.hpp"
+#include "scenes/WatermelonPlasmaScene.hpp"
 
-
-
-constexpr double pi = 3.14159265358979323846;
+constexpr double targetFps = 30;
+constexpr std::chrono::duration<double> targetDurationPerFrame(1.0 / targetFps);
 
 int main(int argc, char *argv[]) {
   auto matrix = std::make_shared<matryx::Matrix>("ipc:///tmp/matrix_0", 64, 32);
@@ -28,16 +28,8 @@ int main(int argc, char *argv[]) {
 
   while (true) {
     auto frameTime = frameTimer.tick();
-
-    paceTimer.tick();
     scene.tick(frameTime);
-    auto paceTime = paceTimer.tick();
-
-    const float targetSecs = (1.0f / 30.0f);
-    if (paceTime.dt < targetSecs) {
-      const float paceMakeUp = targetSecs - paceTime.dt;
-      std::this_thread::sleep_for(std::chrono::duration<float>(paceMakeUp));
-    }
+    std::this_thread::sleep_until(frameTime.now + targetDurationPerFrame);
   }
 
   return 0;

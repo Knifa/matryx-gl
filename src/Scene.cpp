@@ -1,5 +1,5 @@
-#include "Scene.hxx"
-#include "MatrixContext.hxx"
+#include "Scene.hpp"
+#include "MatrixContext.hpp"
 
 using matryx::Scene;
 

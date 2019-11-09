@@ -1,7 +1,7 @@
 #include <cmath>
 
-#include "../FrameTimer.hxx"
-#include "WatermelonPlasmaScene.hxx"
+#include "../FrameTimer.hpp"
+#include "WatermelonPlasmaScene.hpp"
 
 using std::cos;
 using std::pow;

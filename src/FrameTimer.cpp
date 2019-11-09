@@ -1,6 +1,6 @@
+#include "FrameTimer.hpp"
 #include <chrono>
 #include <ratio>
-#include "FrameTimer.hxx"
 
 using matryx::FrameTime;
 using matryx::FrameTimer;
@@ -13,14 +13,13 @@ FrameTimer::FrameTimer() {
 const FrameTime FrameTimer::tick() {
   auto now = std::chrono::high_resolution_clock::now();
 
-  std::chrono::duration<double> t(now - startTick);
-  std::chrono::duration<double> dt(now - lastTick);
-
   struct FrameTime frameTime;
-  frameTime.t = t.count();
-  frameTime.dt = dt.count();
+  frameTime.now = now;
+  frameTime.deltaStart = now - startTick;
+  frameTime.deltaFrame = now - lastTick;
+  frameTime.t = frameTime.deltaStart.count();
+  frameTime.dt = frameTime.deltaFrame.count();
 
   lastTick = now;
-
   return frameTime;
 }
