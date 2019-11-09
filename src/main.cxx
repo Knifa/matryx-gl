@@ -24,14 +24,20 @@ int main(int argc, char *argv[]) {
   matryx::scenes::WatermelonPlasmaScene scene(matrixCtx);
 
   matryx::FrameTimer frameTimer;
+  matryx::FrameTimer paceTimer;
 
   while (true) {
     auto frameTime = frameTimer.tick();
-    // std::cout << "t: " << frameTime.t << std::endl;
-    // std::cout << "dt: " << frameTime.dt << std::endl;
-    // std::cout << std::endl;
 
+    paceTimer.tick();
     scene.tick(frameTime);
+    auto paceTime = paceTimer.tick();
+
+    const float targetSecs = (1.0f / 30.0f);
+    if (paceTime.dt < targetSecs) {
+      const float paceMakeUp = targetSecs - paceTime.dt;
+      std::this_thread::sleep_for(std::chrono::duration<float>(paceMakeUp));
+    }
   }
 
   return 0;
