@@ -4,19 +4,18 @@
 #include <cstdint>
 
 namespace matryx {
-    class Canvas {
-        public:
-            Canvas(const int width, const int height);
-            void setPixel(int x, int y, float r, float g, float b);
-            uint8_t *getFrame();
+class Canvas {
+public:
+  Canvas(const int width, const int height);
+  void setPixel(int x, int y, float r, float g, float b);
+  uint8_t *getFrame();
 
-        private:
-            int width;
-            int height;
-            uint8_t *frame;
-    };
-
-
+private:
+  int width;
+  int height;
+  uint8_t *frame;
 };
+
+}; // namespace matryx
 
 #endif

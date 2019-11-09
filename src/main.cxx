@@ -1,7 +1,7 @@
+#include <chrono>
 #include <cmath>
 #include <iostream>
 #include <thread>
-#include <chrono>
 
 #include "Canvas.hxx"
 #include "Matrix.hxx"
