@@ -1,8 +1,8 @@
 #include <algorithm>
 #include <cstdint>
 
-#include "matrix.hxx"
-#include "canvas.hxx"
+#include "Matrix.hxx"
+#include "Canvas.hxx"
 
 using namespace matryx;
 using std::max;

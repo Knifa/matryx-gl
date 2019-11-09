@@ -3,8 +3,8 @@
 #include <thread>
 #include <chrono>
 
-#include "canvas.hxx"
-#include "matrix.hxx"
+#include "Canvas.hxx"
+#include "Matrix.hxx"
 
 using std::cos;
 using std::pow;
@@ -14,7 +14,7 @@ using std::sqrt;
 constexpr double pi = 3.14159265358979323846;
 
 int main(int argc, char *argv[]) {
-  matryx::Matrix matrix("ipc:///tmp/matrix_0", 128, 128);
+  matryx::Matrix matrix("ipc:///tmp/matrix_0", 64, 32);
   matryx::Canvas canvas(matrix.getWidth(), matrix.getHeight());
   matrix.connect();
 

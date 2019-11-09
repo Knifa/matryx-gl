@@ -4,13 +4,13 @@ project(matryx-gl
 )
 
 if (NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Debug)
+  set(CMAKE_BUILD_TYPE Release)
 endif()
 
 add_executable(matryx-gl
   src/main.cxx
-  src/matrix.cxx
-  src/canvas.cxx
+  src/Matrix.cxx
+  src/Canvas.cxx
 )
 
 set_target_properties(matryx-gl
@@ -25,3 +25,6 @@ target_link_libraries(matryx-gl
 target_compile_options(matryx-gl PRIVATE
   -Wall
 )
+
+target_compile_features(matryx-gl PUBLIC cxx_std_11)
+set_target_properties(matryx-gl PROPERTIES CXX_EXTENSIONS OFF)
