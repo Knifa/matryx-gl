@@ -14,6 +14,7 @@ add_executable(matryx-gl
   src/Matrix.cpp
   src/Scene.cpp
   src/scenes/WatermelonPlasmaScene.cpp
+  src/scenes/WaveScene.cpp
 )
 
 set_target_properties(matryx-gl

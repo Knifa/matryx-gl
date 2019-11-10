@@ -9,8 +9,9 @@
 #include "Matrix.hpp"
 #include "MatrixContext.hpp"
 #include "scenes/WatermelonPlasmaScene.hpp"
+#include "scenes/WaveScene.hpp"
 
-constexpr double targetFps = 30;
+constexpr double targetFps = 25;
 constexpr std::chrono::duration<double> targetDurationPerFrame(1.0 / targetFps);
 
 int main(int argc, char *argv[]) {
@@ -21,7 +22,8 @@ int main(int argc, char *argv[]) {
       std::make_shared<matryx::Canvas>(matrix->getWidth(), matrix->getHeight());
   auto matrixCtx = std::make_shared<matryx::MatrixContext>(matrix, canvas);
 
-  matryx::scenes::WatermelonPlasmaScene scene(matrixCtx);
+  matryx::scenes::WaveScene scene(matrixCtx);
+  scene.setup();
 
   matryx::FrameTimer frameTimer;
   matryx::FrameTimer paceTimer;
